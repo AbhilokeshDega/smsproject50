@@ -1,0 +1,54 @@
+{% extends 'Navbar/ProjectNavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Implementation of Exception Handling</title>
+</head>
+<body>
+
+{% block body %}
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      First in DOM, ordered last
+      <div>
+        <br><br>
+
+<!-- templates/upload.html -->
+<h2>Upload CSV File</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+</form>
+
+
+
+      </div>
+    </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br>
+       <div class="col-auto d-flex align-items-center">
+      <div style="border-left: 2px solid black; height: 100%;"></div>
+    </div>
+    <div class="col" >
+        <br><br>
+      <strong> Output will be displayed Here</strong>
+
+<!-- templates/result.html -->
+<h2>Sales Report</h2>
+<p><strong>Total Sales:</strong> Rs.{{ total_sales }}</p>
+<p><strong>Average Sales:</strong> Rs.{{ average_sales }}</p>
+
+<h3>Sales Distribution Chart</h3>
+<img src="data:image/png;base64,{{ chart }}" alt="Sales Chart">
+
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+</body>
+</html>

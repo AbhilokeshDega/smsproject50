@@ -1,0 +1,49 @@
+{% extends 'Navbar/Projectnavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Implementation of Exception Handling</title>
+</head>
+<body>
+
+{% block body %}
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      INPUT HERE
+      <div>
+        <br><br>
+<form method="post" action="{% url 'calculatorlogic' %}" >
+        {% csrf_token %}
+        <input type="number" name="num1" step="any" placeholder="Enter first number" required>
+        <input type="number" name="num2" step="any" placeholder="Enter second number" required>
+        <select name="operation" required>
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+        <button type="submit">Calculate</button>
+    </form>
+      </div>
+    </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br>
+       <div class="col-auto d-flex align-items-center">
+      <div style="border-left: 2px solid black; height: 100%;"></div>
+    </div>
+    <div class="col" >
+        <br><br>
+      <strong> Output will be displayed Here</strong>
+
+    {% if result is not None %}
+    <h2>Result: {{ result }}</h2>
+    {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+</body>
+</html>

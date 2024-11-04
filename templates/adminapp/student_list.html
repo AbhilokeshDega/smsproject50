@@ -1,0 +1,45 @@
+{% extends 'Navbar/FacultyNavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Printer</title>
+</head>
+<body>
+{% block body %}
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      LIST OF STUDENTS
+        <br><br>
+            <h2>Student List</h2>
+<table>
+    <tr>
+        <th>Register Number</th>
+        <th>Name</th>
+    </tr>
+    {% for student in students %}
+    <tr>
+        <td>{{ student.Register_Number }}</td>
+        <td>{{ student.Name }}</td>
+    </tr>
+    {% endfor %}
+</table>
+    </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br>
+       <div class="col-auto d-flex align-items-center">
+      <div style="border-left: 2px solid black; height: 100%;"></div>
+    </div>
+    <div class="col">
+        <br><br>
+
+
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>

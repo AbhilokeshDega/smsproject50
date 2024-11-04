@@ -1,0 +1,38 @@
+{% extends 'Navbar/FacultyNavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Printer</title>
+</head>
+<body>
+{% block body %}
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+     ADD A STUDENT
+        <br><br>
+            <h2>Add Student</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Student</button>
+</form>
+    </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br>
+       <div class="col-auto d-flex align-items-center">
+      <div style="border-left: 2px solid black; height: 100%;"></div>
+    </div>
+    <div class="col">
+        <br><br>
+
+
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>

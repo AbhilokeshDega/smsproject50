@@ -1,0 +1,33 @@
+{% extends 'Navbar/ProjectNavbar.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      INPUT TO SUBMIT
+        <br>
+        <form method="post" action="{% url 'printpagelogic' %}">
+            {% csrf_token %}
+            <label>Enter Text:</label>
+            <input type="text" name="user_input" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="col order-5">
+      SUCCESSFULLY SUBMITTED
+        <h1>{{ user_input }}</h1>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

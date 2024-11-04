@@ -1,0 +1,41 @@
+{% extends 'Navbar/ProjectNavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Printer</title>
+</head>
+<body>
+{% block body %}
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      ENTER A NUMBER
+        <br><br>
+            <form method="post" action="{% url 'randomlogic' %}">
+            {% csrf_token %}
+            <label>Enter Text:</label>
+            <input type="text" name="number1" required>
+            <br><br>
+            <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br>
+       <div class="col-auto d-flex align-items-center">
+      <div style="border-left: 2px solid black; height: 100%;"></div>
+    </div>
+    <div class="col">
+        <br><br>
+        <strong> Output will be displayed Here</strong>
+              <h1>{{ ran }}</h1>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>
